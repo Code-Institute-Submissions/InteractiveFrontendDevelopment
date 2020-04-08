@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<!--This website is used to test the users memory
+To begin the game, the user must click on the "Start Game" button
+The timer will begin and when any the 12 images displaying "JS" are clicked, they will display a hidden image
+The user must try to match the first image that was revealed to the second image hidden behind the "JS" image
+If the images do not match, they will return to being hidden.
+If the images do match, they will remain displayed
+The game is won when all cards are matched
+The screen will display a message box telling the user the time and number of clicks they took to
+complete the game
+-->
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Memory Game</title>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    
+    <body>
+        <h1 class="page-title">Memorize</h1>
+            
+        <!--Cards will flip when clicked by the player who must try to match the cards-->
+           <div class="game-info">
+               
+                <h5>
+               <!--Show time used during gameplay-->
+                <button onclick="startGame()" class="button">Start Game</button>
+                <p>Time<span id="timer"></span></p>
+            
+                <!--Show number of time the user clicks the cards trying to match them-->
+                <p>Clicks <span id="cardClickCount"></span> </p>
+                </h5>
+             
+            </div>
+        <!-- display the cards on screen in a div -->
+        <section class="memory-game">
+            
+            <div class="memory-card" data-framework="angular">
+                <img class="front-face" src="img/aurelia.svg" 
+                alt="angular" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="angular">
+                <img class="front-face" src="img/aurelia.svg" 
+                alt="angular" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="aurelia">
+                <img class="front-face" src="img/angular.svg" 
+                alt="aurelia" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="aurelia">
+                <img class="front-face" src="img/angular.svg" 
+                alt="aurelia" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="backbone">
+                <img class="front-face" src="img/backbone.svg" 
+                alt="backbone" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="backbone">
+                <img class="front-face" src="img/backbone.svg" 
+                alt="backbone" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="ember">
+                <img class="front-face" src="img/ember.svg" 
+                alt="ember" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="ember">
+                <img class="front-face" src="img/ember.svg" 
+                alt="ember" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="react">
+                <img class="front-face" src="img/react.svg" 
+                alt="react" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="react">
+                <img class="front-face" src="img/react.svg" 
+                alt="react" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="vue">
+                <img class="front-face" src="img/vue.svg" 
+                alt="vue" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+            
+            <div class="memory-card" data-framework="vue">
+                <img class="front-face" src="img/vue.svg" 
+                alt="vue" />
+                <img class="back-face" src="img/js-badge.svg" 
+                alt="js badge" />
+            </div>
+        </section>
+        
+        <script src="scripts.js"></script>
+    </body>
+    <!--count the number of times the cards a clicked -->
+    <script>
+        var count = (function () {
+            var counter = 0;
+            return function () {return counter+=1;}
+        
+        })();
+        function displayCount() {
+            document.getElementById("scoreCount").innerHTML = count();
+        }
+    </script>
+    
+    
+</html>
